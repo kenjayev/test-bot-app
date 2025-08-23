@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Button from "../button/Button";
-import "./card.css";
+import "./Card.css";
 
 const Card = (props) => {
   const { product, onAddProduct, onRemoveProduct } = props;
