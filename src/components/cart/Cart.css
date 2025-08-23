@@ -1,0 +1,9 @@
+.cart__container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.cart__info {
+  font-size: 18px;
+}
