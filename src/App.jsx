@@ -34,13 +34,18 @@ function App() {
   const onRemoveProduct = (product) => {
     const existData = cartProducts.find((item) => item.id === product.id);
     if (existData.quantity === 1) {
-      setCartProducts((prev) => prev.filter((item) => item.id !== product.id));
+      const newData = cartProducts.filter((item) => item.id !== product.id);
+      setCartProducts(newData);
+      if (newData.length === 0) {
+        telegram.MainButton.hide();
+      }
     } else {
       const newData = cartProducts.map((item) =>
         item.id === product.id
           ? { ...existData, quantity: existData.quantity - 1 }
           : item
       );
+
       setCartProducts(newData);
     }
   };
